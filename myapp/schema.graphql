@@ -1,0 +1,35 @@
+schema {
+    query: Query         # reads
+    mutation: Mutation   # writes / updates / deletes
+}
+
+type Mutation {
+    createVehicle(model: String!, wheel: String!, created_at: String): VehicleResult!
+    updateVehicle(id: ID!, model: String, wheel: String): VehicleResult!
+    deleteVehicle(id: ID): VehicleResult!
+}
+
+
+type Vehicle {
+    id: ID!
+    model: String!
+    wheel: String!
+    created_at: String!
+}
+
+type VehicleResult {
+    success: Boolean!
+    errors: [String]
+    vehicle: Vehicle
+}
+
+type VehiclesResult {
+    success: Boolean!
+    errors: [String]
+    vehicles: [Vehicle]
+}
+
+type Query {
+    listVehicles: VehiclesResult!
+    getVehicle(id: ID!): VehicleResult!
+}

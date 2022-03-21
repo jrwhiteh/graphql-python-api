@@ -1,0 +1,9 @@
+from graphql-python-api/myapp run "flask run" to run server
+my secrets.json has creds for postgres db saved locally and ignored with .gitignore
+
+from graphql-python-api/myapp, run "use nvm 14" then run "npm start" to start the react app. 
+this right now uses graphql client from the front end to hit one endpoint on the
+back end to retrieve all rocket league cars in the db
+
+there are already mutations and queries built out to allow CRUD operations on the DB
+using apollo client on the front end.
